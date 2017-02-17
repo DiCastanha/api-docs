@@ -5,7 +5,8 @@ HOST: http://api.dicastanha.com.br/
 
 This API provide management information from system integrated with photos that Dicastanha provide.
 
-## Authorization [/v1/auth/login]
+# Group Authorization
+## Authorization Endpoints [/v1/auth/login]
 
 ### Login [POST]
 
@@ -28,4 +29,93 @@ This API provide management information from system integrated with photos that 
         {
             "success": false,
             "error": "Invalid credentials"
+        }
+        
+# Group Property
+
+## Property [/v1/property]
+
+### List [GET]
+
++ Request
+    + Headers
+    
+            Content-type: "application/json"
+            X-Access-Token: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibXBzYW50b3NAbG9wZXMuY29tLmJyYSIsImV4cCI6MTQ4NzQ0MDIxNn0.7W2rXBZiDf8nq9vDaFyVm3ixJjBla5gQ1VLuYI0LHpU"
+        
++ Response 200 (application/json)
+
+        {
+          "data": [
+            {
+              "type": null,
+              "id": "82a7acf6-f531-11e6-ba1c-0ee9695fe4",
+              "attributes": {
+                "owner": {
+                  "name": "Foo",
+                  "phone": "11 5435-9999",
+                  "cellphone": "",
+                  "email": "email@hotmail.com"
+                },
+                "address": "Cerqueira César, São Paulo - SP, Brazil",
+                "complement": "2717",
+                "accompanying": null,
+                "coordinates": {
+                  "latitude": "-23.561972",
+                  "longitude": "-46.776766"
+                },
+                "keys": "Com o proprietario",
+                "createdAt": {
+                  "date": "2015-11-04 03:12:48.000000",
+                  "timezone_type": 3,
+                  "timezone": "UTC"
+                },
+                "updatedAt": {
+                  "date": "2015-11-04 03:12:48.000000",
+                  "timezone_type": 3,
+                  "timezone": "UTC"
+                },
+                "scheduleAt": "12/11/2017",
+                "agreementAt": "12/11/2017",
+                "description": "Agendar com a proprietária do imóvel",
+                "downloaded": 2,
+                "linkDownload": "http://dicastanha/link"
+              }
+            },
+            {
+              "type": null,
+              "id": "82a7acf6-f531-11e6-ba1c-0ee9695fe4",
+              "attributes": {
+                "owner": {
+                  "name": "Bar",
+                  "phone": "11 5435-9999",
+                  "cellphone": "",
+                  "email": "email+bar@hotmail.com"
+                },
+                "address": "Cerqueira César, São Paulo - SP, Brazil",
+                "complement": "2717",
+                "accompanying": null,
+                "coordinates": {
+                  "latitude": "-23.561972",
+                  "longitude": "-46.776766"
+                },
+                "keys": "Com o proprietario",
+                "createdAt": {
+                  "date": "2015-11-04 03:12:48.000000",
+                  "timezone_type": 3,
+                  "timezone": "UTC"
+                },
+                "updatedAt": {
+                  "date": "2015-11-04 03:12:48.000000",
+                  "timezone_type": 3,
+                  "timezone": "UTC"
+                },
+                "scheduleAt": "12/11/2017",
+                "agreementAt": "12/11/2017",
+                "description": "Agendar com a proprietária do imóvel",
+                "downloaded": 2,
+                "linkDownload": "http://dicastanha/link"
+              }
+            }
+          ]
         }
