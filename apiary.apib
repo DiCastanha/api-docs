@@ -1,39 +1,36 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://api.dicastanha.com.br/
 
 # Dicastanha API
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+This API provide management information from system integrated with photos that Dicastanha provide.
 
-## Questions Collection [/questions]
+## Authorization [/v1/auth/login]
 
-### List All Questions [GET]
+### Login [POST]
+
++ Request (application/json)
+
+        {   
+            "_username": "email@partner.com",
+            "_password": "p4ssw0rd"
+        }
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
+        {
+           "success": true,
+           "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibXBzYW50b3NAbG9wZXMuY29tLmJyYSIsImV4cCI6MTQ4NzQzOTQ3OX0.pmPbQAIZVaTbQpTx0-FdBldxPlQCeZirb1qdhrbvddQ"
+        }
 
-### Create a New Question [POST]
++ Response 400 (application/json)
+
+        {
+            "success": false,
+            "error": "Invalid credentials"
+        }
+
+### Create a New Question [GET]
 
 You may create your own question using this action. It takes a JSON
 object containing a question and a collection of answers in the
